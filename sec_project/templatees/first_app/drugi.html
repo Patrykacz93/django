@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Help page</title>
+</head>
+<body>
+
+<h1>To som imniona wymyslone</h1>
+<div class="django">
+    {% if user_records %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+        </thead>
+
+    {% for acc in user_records %}
+    <tr>
+        <td>{{ acc.name }}</td>
+        <td>{{ acc.surname }}</td>
+        <td>{{ acc.mail }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <p>No Users</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
